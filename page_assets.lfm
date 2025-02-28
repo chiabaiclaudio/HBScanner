@@ -1,0 +1,870 @@
+object pgAssets: TpgAssets
+  Left = 259
+  Height = 636
+  Top = 363
+  Width = 1280
+  Caption = '&Activos'
+  ClientHeight = 636
+  ClientWidth = 1280
+  KeyPreview = True
+  OnCreate = FormCreate
+  OnDestroy = FormDestroy
+  LCLVersion = '3.2.0.0'
+  Visible = True
+  object LED: TImage
+    Left = 16
+    Height = 16
+    Top = 584
+    Width = 16
+    AutoSize = True
+    ImageIndex = 1
+    Stretch = True
+  end
+  object pnlStsBar: TPanel
+    Left = 0
+    Height = 25
+    Top = 611
+    Width = 1280
+    Align = alBottom
+    AutoSize = True
+    BevelOuter = bvLowered
+    ClientHeight = 25
+    ClientWidth = 1280
+    TabOrder = 1
+    object imgLED: TImage
+      Left = 1137
+      Height = 23
+      Top = 1
+      Width = 16
+      Align = alRight
+      AutoSize = True
+      BorderSpacing.Left = 5
+      BorderSpacing.Right = 5
+      Center = True
+      ImageIndex = 1
+      Images = imgsLED
+      OnDblClick = imgLEDDblClick
+      StretchInEnabled = False
+      Transparent = True
+    end
+    object lblStsMessage: TLabel
+      Left = 955
+      Height = 23
+      Top = 1
+      Width = 177
+      Align = alRight
+      Caption = 'Generando datos ... ##%'
+      Layout = tlCenter
+    end
+    object lblRecordCount: TLabel
+      Left = 6
+      Height = 23
+      Top = 1
+      Width = 143
+      Align = alLeft
+      BorderSpacing.Left = 5
+      Caption = '### activos listados'
+    end
+    object dbNav: TDBNavigator
+      Left = 1160
+      Height = 23
+      Top = 1
+      Width = 119
+      Align = alRight
+      BevelOuter = bvNone
+      BorderSpacing.Left = 7
+      ChildSizing.EnlargeHorizontal = crsScaleChilds
+      ChildSizing.EnlargeVertical = crsScaleChilds
+      ChildSizing.ShrinkHorizontal = crsScaleChilds
+      ChildSizing.ShrinkVertical = crsScaleChilds
+      ChildSizing.Layout = cclLeftToRightThenTopToBottom
+      ChildSizing.ControlsPerLine = 100
+      ClientHeight = 23
+      ClientWidth = 119
+      DataSource = dsGrid
+      Options = []
+      TabOrder = 0
+      VisibleButtons = [nbFirst, nbPrior, nbNext, nbLast]
+    end
+  end
+  object pnlData: TPanel
+    Left = 0
+    Height = 611
+    Top = 0
+    Width = 1024
+    Align = alClient
+    BevelOuter = bvNone
+    Caption = 'pnlData'
+    ClientHeight = 611
+    ClientWidth = 1024
+    TabOrder = 0
+    object grdAssets: TDBGrid
+      Left = 0
+      Height = 411
+      Top = 0
+      Width = 1024
+      Align = alClient
+      AlternateColor = 16775401
+      AutoFillColumns = True
+      Color = clWindow
+      Columns = <      
+        item
+          Alignment = taCenter
+          Title.Alignment = taCenter
+          Title.Caption = 'Categoría'
+          Width = 40
+          FieldName = 'MARK_CATEGORY'
+        end      
+        item
+          Alignment = taCenter
+          Title.Alignment = taCenter
+          Title.Caption = 'Zona'
+          Width = 40
+          FieldName = 'MARK_ZONE'
+        end      
+        item
+          Alignment = taCenter
+          Title.Alignment = taCenter
+          Title.Caption = 'Mercado'
+          Width = 0
+          Visible = False
+          FieldName = 'ASSET_MARKET'
+        end      
+        item
+          Alignment = taCenter
+          Title.Alignment = taCenter
+          Title.Caption = 'Tipo'
+          Width = 40
+          FieldName = 'ASSET_TYPE'
+        end      
+        item
+          Alignment = taCenter
+          Title.Alignment = taCenter
+          Title.Caption = 'Acuerdo'
+          Width = 0
+          Visible = False
+          FieldName = 'ASSET_SETTLEMENT'
+        end      
+        item
+          Alignment = taCenter
+          Font.Style = [fsBold]
+          Title.Alignment = taCenter
+          Title.Font.Style = [fsBold]
+          Title.Caption = 'Símbolo'
+          Width = 40
+          FieldName = 'ASSET_SYMBOL'
+        end      
+        item
+          Alignment = taCenter
+          Title.Alignment = taCenter
+          Title.Caption = 'Moneda'
+          Width = 0
+          Visible = False
+          FieldName = 'ASSET_CURRENCY'
+        end      
+        item
+          Title.Alignment = taCenter
+          Title.Caption = 'Descripción'
+          Width = 0
+          Visible = False
+          FieldName = 'ASSET_DESCRIPTION'
+        end      
+        item
+          Alignment = taCenter
+          Title.Alignment = taCenter
+          Title.Caption = 'Cartera'
+          Width = 40
+          FieldName = 'MARK_PORTFOLIO'
+        end      
+        item
+          Alignment = taCenter
+          Title.Alignment = taCenter
+          Title.Caption = 'Excluído'
+          Width = 0
+          Visible = False
+          FieldName = 'MARK_BLACKLIST'
+        end      
+        item
+          Alignment = taCenter
+          Title.Alignment = taCenter
+          Title.Caption = 'Favorito'
+          Width = 40
+          FieldName = 'MARK_FAVORITE'
+        end      
+        item
+          Alignment = taCenter
+          Title.Alignment = taCenter
+          Title.Caption = 'Ult. cierre'
+          Width = 40
+          FieldName = 'PRICE_CLOSE_LAST'
+        end      
+        item
+          Alignment = taCenter
+          Font.Style = [fsBold]
+          Title.Alignment = taCenter
+          Title.Font.Style = [fsBold]
+          Title.Caption = 'Cierre'
+          Width = 40
+          FieldName = 'PRICE_CLOSE'
+        end      
+        item
+          Alignment = taCenter
+          Title.Alignment = taCenter
+          Title.Caption = 'Apertura'
+          Width = 0
+          Visible = False
+          FieldName = 'PRICE_OPEN'
+        end      
+        item
+          Alignment = taCenter
+          Title.Alignment = taCenter
+          Title.Caption = 'Mínimo'
+          Width = 0
+          Visible = False
+          FieldName = 'PRICE_LOW'
+        end      
+        item
+          Alignment = taCenter
+          Title.Alignment = taCenter
+          Title.Caption = 'Máximo'
+          Width = 0
+          Visible = False
+          FieldName = 'PRICE_HIGH'
+        end      
+        item
+          Alignment = taCenter
+          Font.Style = [fsBold]
+          Title.Alignment = taCenter
+          Title.Caption = 'CC %'
+          Width = 40
+          FieldName = 'PRICE_CHANGE_CC'
+          DisplayFormat = '0.## %'
+        end      
+        item
+          Alignment = taCenter
+          Font.Style = [fsBold]
+          Title.Alignment = taCenter
+          Title.Caption = 'AC %'
+          Width = 39
+          FieldName = 'PRICE_CHANGE_OC'
+          DisplayFormat = '0.## %'
+        end      
+        item
+          Alignment = taCenter
+          Title.Alignment = taCenter
+          Title.Caption = '3 días %'
+          Width = 0
+          Visible = False
+          FieldName = 'PRICE_CHANGE_3DAY'
+        end      
+        item
+          Alignment = taCenter
+          Title.Alignment = taCenter
+          Title.Caption = '7 días %'
+          Width = 0
+          Visible = False
+          FieldName = 'PRICE_CHANGE_WEEK'
+        end      
+        item
+          Alignment = taCenter
+          Title.Alignment = taCenter
+          Title.Caption = '15 días %'
+          Width = 0
+          Visible = False
+          FieldName = 'PRICE_CHANGE_HALF_MONTH'
+        end      
+        item
+          Alignment = taCenter
+          Title.Alignment = taCenter
+          Title.Caption = '30 dias %'
+          Width = 0
+          Visible = False
+          FieldName = 'PRICE_CHANGE_MONTH'
+        end      
+        item
+          Alignment = taCenter
+          Title.Alignment = taCenter
+          Title.Caption = 'Ant. volumen'
+          Width = 39
+          FieldName = 'VOLUME_LAST'
+        end      
+        item
+          Alignment = taCenter
+          Title.Alignment = taCenter
+          Title.Caption = 'Volumen'
+          Width = 39
+          FieldName = 'VOLUME_ACTUAL'
+        end      
+        item
+          Alignment = taCenter
+          Font.Style = [fsBold]
+          Title.Alignment = taCenter
+          Title.Caption = '% Volumen'
+          Width = 39
+          FieldName = 'VOLUME_CHANGE'
+          DisplayFormat = '0.## %'
+        end      
+        item
+          Alignment = taCenter
+          Title.Alignment = taCenter
+          Title.Caption = 'Ult. ordenes'
+          Width = 39
+          FieldName = 'VOLUME_ORDER_LAST'
+        end      
+        item
+          Alignment = taCenter
+          Title.Alignment = taCenter
+          Title.Caption = 'Ordenes'
+          Width = 39
+          FieldName = 'VOLUME_ORDER'
+        end      
+        item
+          Alignment = taCenter
+          Font.Style = [fsBold]
+          Title.Alignment = taCenter
+          Title.Caption = '% Ordenes'
+          Width = 39
+          FieldName = 'VOLUME_ORDER_CHANGE'
+          DisplayFormat = '0.## %'
+        end      
+        item
+          Alignment = taCenter
+          Font.Style = [fsBold]
+          Title.Alignment = taCenter
+          Title.Caption = 'HB'
+          Width = 39
+          FieldName = 'HB_FORCE'
+        end      
+        item
+          Alignment = taCenter
+          Font.Style = [fsBold]
+          Title.Alignment = taCenter
+          Title.Caption = 'HB Vol.'
+          Width = 39
+          FieldName = 'HB_VOLUME'
+        end      
+        item
+          Alignment = taCenter
+          Title.Alignment = taCenter
+          Title.Caption = 'HB - HBVol.'
+          Width = 39
+          FieldName = 'HB_SPREAD_VOL'
+        end      
+        item
+          Alignment = taCenter
+          Title.Alignment = taCenter
+          Title.Caption = 'SMA'
+          Width = 39
+          FieldName = 'DERIV_SMA'
+        end      
+        item
+          Alignment = taCenter
+          Title.Alignment = taCenter
+          Title.Caption = 'EMA'
+          Width = 39
+          FieldName = 'DERIV_EMA'
+        end      
+        item
+          Alignment = taCenter
+          Title.Alignment = taCenter
+          Title.Caption = 'WMA'
+          Width = 39
+          FieldName = 'DERIV_WMA'
+        end      
+        item
+          Alignment = taCenter
+          Title.Alignment = taCenter
+          Title.Caption = 'SWMA'
+          Width = 39
+          FieldName = 'DERIV_SWMA'
+        end      
+        item
+          Alignment = taCenter
+          Title.Alignment = taCenter
+          Title.Caption = 'SMA - WMA'
+          Width = 0
+          Visible = False
+          FieldName = 'DERIV_SMA_WMA'
+        end      
+        item
+          Alignment = taCenter
+          Title.Alignment = taCenter
+          Title.Caption = 'Puntaje'
+          Width = 39
+          FieldName = 'SCORE_MAIN'
+        end      
+        item
+          Alignment = taCenter
+          Title.Alignment = taCenter
+          Title.Caption = 'Punt. alcista'
+          Width = 39
+          FieldName = 'SCORE_BULL'
+        end      
+        item
+          Alignment = taCenter
+          Title.Alignment = taCenter
+          Title.Caption = 'Punt. bajista'
+          Width = 39
+          FieldName = 'SCORE_BEAR'
+        end      
+        item
+          Alignment = taCenter
+          Title.Alignment = taCenter
+          Title.Caption = 'Punt. Descrip.'
+          Width = 0
+          Visible = False
+          FieldName = 'SCORE_DESCRIPTION'
+        end      
+        item
+          Alignment = taCenter
+          Title.Alignment = taCenter
+          Title.Caption = 'Act. fecha'
+          Width = 0
+          Visible = False
+          FieldName = 'UPDATE_TIME'
+        end      
+        item
+          Alignment = taCenter
+          Title.Alignment = taCenter
+          Title.Caption = 'Act. código'
+          Width = 0
+          Visible = False
+          FieldName = 'UPDATE_CODE'
+        end      
+        item
+          Alignment = taCenter
+          Title.Alignment = taCenter
+          Title.Caption = 'Act. mensaje'
+          Width = 0
+          Visible = False
+          FieldName = 'UPDATE_MSG'
+        end>
+      DataSource = dsGrid
+      FixedCols = 0
+      Flat = True
+      HeaderHotZones = []
+      HeaderPushZones = []
+      Options = [dgTitles, dgColumnResize, dgColumnMove, dgRowLines, dgTabs, dgRowSelect, dgAlwaysShowSelection, dgMultiselect, dgPersistentMultiSelect, dgAutoSizeColumns, dgCellHints, dgTruncCellHints, dgCellEllipsis]
+      OptionsExtra = []
+      ParentFont = False
+      Scrollbars = ssAutoBoth
+      ShowHint = True
+      TabOrder = 0
+      OnContextPopup = grdAssetsContextPopup
+      OnDrawColumnCell = grdAssetsDrawColumnCell
+      OnDrawColumnTitle = grdAssetsDrawColumnTitle
+      OnGetCellHint = grdAssetsGetCellHint
+      OnKeyPress = grdAssetsKeyPress
+      OnKeyUp = grdAssetsKeyUp
+      OnTitleClick = grdAssetsTitleClick
+    end
+    object pnlAssetData: TPageControl
+      Left = 0
+      Height = 200
+      Top = 411
+      Width = 1024
+      ActivePage = tbPuntaje
+      Align = alBottom
+      TabIndex = 1
+      TabOrder = 1
+      Visible = False
+      object tbData: TTabSheet
+        Caption = '&Activo'
+        ClientHeight = 165
+        ClientWidth = 1014
+        Font.Style = [fsBold]
+        ParentFont = False
+        object dbtxtTYPE: TDBText
+          Left = 944
+          Height = 23
+          Top = 0
+          Width = 68
+          Alignment = taRightJustify
+          Anchors = [akTop, akRight]
+          DataField = 'ASSET_TYPE'
+          DataSource = dsGrid
+          Font.Style = [fsItalic]
+          ParentFont = False
+        end
+        object dbDescription: TDBText
+          Left = 0
+          Height = 23
+          Top = 0
+          Width = 1014
+          Align = alTop
+          DataField = 'ASSET_DESCRIPTION'
+          DataSource = dsGrid
+          Font.Style = [fsBold]
+          ParentFont = False
+        end
+      end
+      object tbPuntaje: TTabSheet
+        Caption = '&Puntaje'
+        ClientHeight = 165
+        ClientWidth = 1014
+        object dbScoreExplained: TDBMemo
+          Left = 402
+          Height = 165
+          Top = 0
+          Width = 612
+          Align = alClient
+          DataField = 'SCORE_DESCRIPTION'
+          DataSource = dsGrid
+          ReadOnly = True
+          TabOrder = 0
+        end
+        object Panel1: TPanel
+          Left = 0
+          Height = 165
+          Top = 0
+          Width = 402
+          Align = alLeft
+          ClientHeight = 165
+          ClientWidth = 402
+          TabOrder = 1
+          object dbScoreBull: TDBText
+            Left = 1
+            Height = 23
+            Top = 24
+            Width = 400
+            Align = alTop
+            DataField = 'SCORE_BULL'
+            DataSource = dsGrid
+          end
+          object dbScoreBull1: TDBText
+            Left = 1
+            Height = 23
+            Top = 70
+            Width = 400
+            Align = alTop
+            DataField = 'SCORE_BULL'
+            DataSource = dsGrid
+          end
+          object dbScoreBull2: TDBText
+            Left = 1
+            Height = 23
+            Top = 47
+            Width = 400
+            Align = alTop
+            DataField = 'SCORE_BULL'
+            DataSource = dsGrid
+          end
+          object dbScoreBull3: TDBText
+            Left = 1
+            Height = 23
+            Top = 1
+            Width = 400
+            Align = alTop
+            DataField = 'SCORE_BULL'
+            DataSource = dsGrid
+          end
+        end
+      end
+    end
+  end
+  object pnlFilter: TPanel
+    Left = 1024
+    Height = 611
+    Top = 0
+    Width = 256
+    Align = alRight
+    TabOrder = 2
+  end
+  object dsGrid: TDataSource
+    DataSet = DataAssets.tblData
+    OnDataChange = dsGridDataChange
+    Left = 40
+    Top = 64
+  end
+  object pmTitles: TPopupMenu
+    OnPopup = pmTitlesPopup
+    Left = 40
+    Top = 128
+    object pmTitlesActiveColumn: TMenuItem
+      Tag = -1
+      Caption = '...'
+      ShowAlwaysCheckable = True
+    end
+    object pmTitlesTopSeparator: TMenuItem
+      Tag = -1
+      Caption = '-'
+    end
+    object pmTitlesAsset: TMenuItem
+      Tag = -1
+      Caption = '&Activo'
+    end
+    object pmTitlesMarks: TMenuItem
+      Tag = -1
+      Caption = '&Marcadores'
+    end
+    object pmTitlesPrices: TMenuItem
+      Tag = -1
+      Caption = '&Precios'
+    end
+    object pmTitlesVolume: TMenuItem
+      Tag = -1
+      Caption = '&Volumen'
+    end
+    object pmTitlesHB: TMenuItem
+      Tag = -1
+      Caption = 'Heart Beat'
+    end
+    object pmTitlesDerivatives: TMenuItem
+      Tag = -1
+      Caption = '&Derivados'
+    end
+    object pmTitlesScore: TMenuItem
+      Tag = -1
+      Caption = '&Puntaje'
+    end
+    object pmTitlesUpdate: TMenuItem
+      Tag = -1
+      Caption = '&Actualización'
+    end
+    object pmTitlesBottomSep: TMenuItem
+      Tag = -1
+      Caption = '-'
+    end
+  end
+  object pmGrid: TPopupMenu
+    Images = wMain.imglstMenues
+    OnPopup = pmGridPopup
+    Left = 136
+    Top = 136
+    object pmFavorite: TMenuItem
+      Caption = 'pmFavorito'
+      ShowAlwaysCheckable = True
+      OnClick = pmFavoriteClick
+    end
+    object pmBlackList: TMenuItem
+      Caption = 'pmBlackList'
+      ShowAlwaysCheckable = True
+      OnClick = pmBlackListClick
+    end
+    object Separator5: TMenuItem
+      Caption = '-'
+    end
+    object pmCategories: TMenuItem
+      Caption = 'Categorías'
+      ImageIndex = 6
+    end
+    object pmZones: TMenuItem
+      Caption = 'Zonas'
+      ImageIndex = 11
+    end
+    object Separator4: TMenuItem
+      Caption = '-'
+    end
+    object pmCopyMSymbol: TMenuItem
+      Caption = 'pmCopyMSymbol'
+      ImageIndex = 7
+      OnClick = pmCopyMSymbolClick
+    end
+    object pmCopySymbol: TMenuItem
+      Caption = 'pmCopySymbol'
+      ImageIndex = 7
+      OnClick = pmCopySymbolClick
+    end
+    object pmCopyMSymbolD: TMenuItem
+      Caption = 'pmCopyMSymbolD'
+      ImageIndex = 7
+      OnClick = pmCopyMSymbolDClick
+    end
+    object Separator2: TMenuItem
+      Caption = '-'
+    end
+    object pmViewFilter: TMenuItem
+      Caption = 'pmViewFilter'
+      ImageIndex = 13
+      OnClick = pmViewFilterClick
+    end
+    object pmViewData: TMenuItem
+      Caption = 'pmViewData'
+      ImageIndex = 16
+      OnClick = pmViewDataClick
+    end
+    object Separator3: TMenuItem
+      Caption = '-'
+    end
+    object pmUpdate: TMenuItem
+      Caption = 'pmUpdate'
+      ImageIndex = 5
+    end
+    object Separator1: TMenuItem
+      Caption = '-'
+    end
+    object pmDelete: TMenuItem
+      Caption = 'pmDelete'
+      ImageIndex = 8
+      OnClick = pmDeleteClick
+    end
+  end
+  object dlgDeleteQuestion: TTaskDialog
+    Buttons = <>
+    RadioButtons = <>
+    VerificationText = 'No volver a preguntar'
+    Left = 88
+    Top = 200
+  end
+  object imgsLED: TImageList
+    Left = 128
+    Top = 64
+    Bitmap = {
+      4C7A080000001000000010000000601200000000000078DACD587B5CCE67FFBF
+      D266490E25AC2CA7A7690BA5C39AB6799C3A085B89E45808CFF3184B652373F8
+      4964A80C937278908CD48C268C19B56E9AA86594548EB96FDD1D74A06E75F77E
+      DEDFFBAE5B0EBFBD9ED7EBF963ABD7FBF5BABA3ED7FBF3BDAEEFF77A7F0E0110
+      F81F61E22B84F12421DE9825847588954970D882E0AD5BB7A6EDD9B347BE77EF
+      5E45545454C6AA55AB96B8BBF7E9EAE020440B5EE487467DE19A9C9C2C2F2A2A
+      424343035A7E1A1B1B51585888D8D8586560E02CAF17F9A63E427CB12ED82525
+      254555595989BABA3A0DA7A9A94903692CCD3D7AF4088989896AFA18DF9AFFBE
+      BFA5F1EEDDBB15D7AE5D8352A9444D4D0DEAEBEB357B90208DA539C956505080
+      AFBFFEBA72DAB411E62DFC2D5BB68470DF387FFE3C4A4A4A50565686AAAA2AD4
+      D6D66A208DA539C92693C970F8F061AC59B326BC85BF6BD7AEF4D4D4549C3C79
+      12B9B9B9B87BF72EE472394A4B4B35502814B877EF1EAE5EBD8A53A74EE1F8F1
+      E3D21E725AF8070F1E949F3E7D1AE7CE9D43464606AE5CB982BCBC3CDCBC7953
+      83FCFC7C6467676B6CD21A69ED8E1D3BCA5BF84949490A69EFD2DEB2B2B2F0DB
+      6FBFE1F7DF7FC7F5EBD73590C6D29C64BB70E182E69CDCB38E7FE8D021D9C58B
+      17357669FF2DCF96BEA384963D4836694D666626BEF9E69BAB2DFC9D3B77864A
+      7EA53D4A5CE95BDFB97307F7EFDFD7401A4B7E245B4E4E8E660FE1E1E1EB5BF8
+      13833C4CF7EDDBA794F62A7D9FDBB76FE3C18307BAF7278D251F924D5AC36F5D
+      3375EA889E2D7CABA142042E9AE3C9F7A02E2E2ED6BCFF870F1F42BA4B12A4B1
+      3427D98E1E3D8ACF3E9BE5DFFAFE48FC81CEF41138CB9BBE2BA47B243DB7A2A2
+      42C397C6D2F9A9876A72FD5EBCBF2D7C698EFB320B0B0B0BE7FBC9DEBF7F7F59
+      424242794C4C4C2EE7D6D366F12AFDFCD968ADFFD7670B1393B122D87A9451DA
+      27BEF672AF490E8AC1433A65D8D88825F6F6E20FF5DF768670355FFC967CEBF9
+      6F505AA704D5ABD17F797D0512CEEEC248AF3E4ABB41E295FA379E285CDE5DD5
+      5F75ECEE0FC87F944F4E39548D2AA8D42A54AA2A51F0A80027EE9FC298F98E6A
+      7B3BF19CFECD3E11C65DA7B753049C9C83038507207B2843517511E44FE4503C
+      51A0B8BA1899A599385874100BCE2D848DAB6125CFA2D3BFF91811D26D71170C
+      DA310891B991482C4AC4B907E770A9F412B294594893A721A93809D157A3E1BC
+      D7193D82BAC0D14E4FA7FF5E933BA477D8D0017A5BDBC0E38407C2AF8423F67A
+      2CE20BE2117F331E717971589BBD161FFFF809F4B7E9C36083213E1869ACD37F
+      DFF9DDE4AFC5BD0E837D46E878A83BAC8F3BC0EB9C0F0264FFC06CD93FE17D7E
+      1206A43AA1D3A137D12EBE23DAC4BD860F7C4C75FAEDF9797785E1FE8E3049EA
+      811EC7DFC5DF7E72C43BE91FC15A364C03ABF421B03CFB1EDE3A6E8D2E491630
+      48E8800F2775D3F18D171ACBCCBFEB0BF31FDEC5DB6707C3E6A21B9CB2C7E183
+      AB13095F38E58C836DA63BFAFDCCB3D3C79B47FA60A87B379DFEDB4D13A1B6FB
+      1DD0FBB41D6C2EB86070AE0F86DF9C05F73BF3E07EFB538C280C80337DD95C74
+      459F330E70DAE70887417AEB5B7D3F53BB193D943619C3E170F9630CBB310363
+      4B8230A17C392654ACC0D807C1185E30138E573EC100D9708C98D4BB86DFEF39
+      FDF77F5F788E0EB4537FF4FB248C289A8371A5A1985EB711FEF551F0562EC5C8
+      E2B9F8E8DA248C59E204DEC157EA9FF3DE6EBE9615134FCFC4C4B2E5985CFF15
+      A6D4AF876FF90A4C3C3F1BEE53ADAAB9E60FF5CF7D99D9DB88F011EE3DB2C704
+      D8968D996D5B3ED2C322D7DE466F3D6D7F49FD77E8BE5118758B14AF1B6E15AF
+      BDB1D5C4C86C4D70AF0FC3D386CF8A968F9C1DADB01EBB3CA3CFB0854BFAB92C
+      EA4A8816BCC437D8ECDADD3241BE29B980BA6B6C563F5056AFC6EE73D7F1DEB4
+      0DCAB747047BBDC8EF64BE4174E8BAC1A5AFEB51D5D19206E4D73066A840ED6B
+      51F91428E05CAABC111F2DDAAFA68FF1ADF95DFAAE3536EABF4331E3A7061CB8
+      0DC8CA80A25A405E072888628E333977F00E303F438D9E5ED195FD5C4274FA37
+      EDB33AA4434001ECE280C81B40E25DE0DC43E012159245A4950249F780E80250
+      FF80F1C242588D0CD2E9BFDBBB51E9065F36426F29E0760C08BF0EC41602F1B7
+      B588E338220F187B1CD05F06BCFE6513ACBDC274FA3773DA276FB38A8330620D
+      60CE7DB870EDB474603AE19E0A58ECD4DA346B5600D6D36374FAED66FBADA2CD
+      5A0ED61191C466621B11DB8C98E6B9A8E635AB81017EDB75FC0EA6BB65461BD4
+      5AEE16A9A02112A4C2A019D27837B155EBDF6023603B215CA7FF37DA4785F658
+      5A0CB1492A06886F89A304F72D4E10C7A422A7D9EFD740AFF5B7D16F44904EFF
+      5DFAAC35B574DDA634DCD108B18F134788D3C42F44067186F89E88E7B3770076
+      FE5B6ADE1E19A2D3BFC57BCB446FE7C59E8E81FBD5ED131BB5CF3B4F5C21B289
+      34E207A0DDE126387E9E84B74704F9B7BE3F12BFEF474B04EF95B7837F74C53B
+      F185E898DE043DF2F52E0346DC43BF6F6FC121607335D7F8BD787F5BF8D21CF7
+      65D66F7850B8834F58B6E3BC9832C779DBCB1D7DC373AD8607ADA7CDE255FAF9
+      2BE6FF01A33BA68D9BFA9EDC7BAA93C279A8F17F9DFF7B7DF937F9BE8B09A87A
+      5AABABFF6B1B9EE0D82FC918E5F3EEFF9BFF3BFB0817A7C8BFAB729EDE8602AC
+      BD518F46CDAF1A8FA14229E77E7F7A1F534247ABE9E3A5FCFFD63F4D15DF541F
+      C7AF2844111E727D35194F3450725CCC992C5AF6D4FD0C271FF3E7F2BF998708
+      713E3601F3145B711A577199EB0AF000B7C9B94D7601E4B8420F3FD1165CBA03
+      C353A6C2C156E8F4DF7B4AC774D71B9FC3F5D612443C49422AB29186EBB848E6
+      45DCE4380F2791838D75DF331F2E854BD1620C71EFA6D3FF3B8B2CE5A34B56C0
+      5311860995EB30BF7E07229B52B00B67B19B88E238B07E277C68F37C1886510F
+      96C365E6BB3AFD5A2EEBA7F02E5B0BDF47EB99EF36636E532CE6632716921D44
+      2CE0589AF3576DC1A4AA0DF02C5F0BB78001CFE5FF69951BE157FF35FE85387C
+      817D58856FB10E891A84E12016736E1E76D0C7664CAD89C2708F1E3AFD1B4C11
+      A1932E2F42803A068BB0176B71085BF03D9FFA83065B398EA09F2F689BADDE8E
+      80EC65B0B315CFE57FA73996CA850D7BB01C09F81A4710CF377684673F4AECC7
+      296CA68F95B42D6CDA8BD1FE035FCAFFD6CCFF9342DDD4110D49D846D6619CC1
+      CF90E13C2E20995F6E3B8E619D3A197E6BC6FD61FEFF78CAC08A0D97B620B9E9
+      67DE858BF47291FB388FE89CEDF0F277F8AFF2FF20E67F57F79ED993E77E5836
+      E51F1F96BB79F4C9B5B3117FD9FC2F227E1462DD6921366708B145662256A604
+      1B2C494C1BB82A596E1BF69DC2F0B33D1962D6B625626E6C5742B4E025FEA65F
+      5CBBEFCB91475D7F084583FA59FEE73826E70E7A2C4F548AD9DBBD5EE2AF3929
+      C4DA532E7D0F5F551D7DAA46BED43310AA6654124CBD48A5CD3AE68C9A3EC63F
+      C75F79CCB84DF479C5CC476A1CE0848C2822E4848228263209A6202C78DC8436
+      4B932BC9D7E95F2C3B12627846013B1298DE785399FF894B4416C1F48124229A
+      70662DD0EEC7071001313AFD1B449C4C6F77430D3DE67A37D61B928169977758
+      0BA673DE7FE6FF7AE67FD6206D590FB40F89D7E9BF53EC45B9FE7D0EE85B5433
+      FF3700AE34F811FEC428C2A2416B134AE6A412A0D3DA9467FADD7345A1CFFA46
+      B046128DDC1F274D08B3667481764EB2098665BD0AA0F3BA67FC0E3B2FCB8CAA
+      9A20F80C234EF4260649676D8634EE4B746CF6D18ECFE9FC79824EFF62E3B9D0
+      370BCAF03AFFE8453811A3091F6222318618DCECB72DD1BD4001BD8098F5ADBE
+      9F6997A853CAEE8D6AF4E7845BF3B98388606266F33B18287179A9BAAE3D5223
+      E6C4EAF42F821384F8F4DF9E96713FA9DFA78F8F39F969F33BFF4AFAE68497B4
+      87A62658ED4BE3B7DBEEFFDCFD91F8F3FF2DC4EC18EF9EAB932B3CF34BB080CF
+      F93F1A59962190F02E54A04FC4916AAEF17BE9FEB6F0A5F939B16662564CB8D9
+      E7F1D9FD37A694F58F4C29EFB1787FAE745EDA2C5EA59F3F5DFF22A4194B8850
+      13BECC600383C0B4810357C86D6D572A0C0DE731304CA3D1BFAB1033440B5EE6
+      7FE1DABD7BA43C2A2A170A45039A9A034059592362627E438F1E5F2A85F0F37A
+      991F24C1A56FDFDDAAA3479F229F01A09CB753A5D2A29201A080012035B501D6
+      D6316A21A68F7F9EBFC0B84D9B558A99336B70800140C60050C40020A79E150C
+      00C50C00990C00071900162CA883BE7E6825CFF24CFF625E88A1E119D8D93D44
+      2403402203C03906804B0C00590C00690C00490C00D10C00CECE4A181AFE4CD2
+      F467FA37589CDEAE5D11F4F4EEC28D01209C96580680F8782DE21800227819C7
+      3200E8EBDF43DBB6B7D0BE7DA04EFF9D3BAF97EBEBCBE9534954C39C01C0C585
+      B5FF74C60006017777EADF82752D052E44199F2347A74EAB9FE9DF385AA1AF5F
+      D16C6FC4EB1462FBF68C119DB430A2A8DBB685C6261800F4F42AD1B9F39A67FA
+      EFB05A6664A4E51A1800DDBA51AB14EBDB6FB3EEED07F4E943DD75A7EEDB697D
+      B46BF704C6C641CFF42F8243CDCCAEF16C80A9296069C91ADD4E7A575AD8DB6B
+      7D75ED0ABCF61AF0E69B05DCC3B467FA179F9976E9B25A6962D2C873B2B7B005
+      860E65DC1823BD3360D830C62006A19E547CE7CE4DDCDFEA1A7EBF67FA177389
+      999E7DFB6E535B5935C2C141FBCEA64C01A64E053C3C004747C0CAAA89FBD823
+      7D3BFFE7EF8FC40F20FCBC2D2C56540C1D9AC7E736C187016C2203D8C70C28C3
+      8717F0F961D5E4FABD7C7F5BF8D2BCBF19CF166E66B630DBD2725D99A5E557E5
+      E6E641B9D27969B378957EFE6C24390991FCBE10A9EE429CF41426878789E003
+      233BA625FBBE27FF6E929362CFDF8D33B6B1FE8F65FD1FCBBAA5052FF28FBB0A
+      D75F66F7913F38BB07EAFA6A5DFDAFAEAFC59DB3079138CE4AB99DF5FF8BFC44
+      7B210E3B0A97CCCF9C556A059BAEDA07C0532619758316522F512B87BA341767
+      168C54D3C7F8D6FC84778471AA8B9142FD2B45768FCD5A3983452D855FFF488B
+      C76CE62B6E02F76568CAD98AE4B11D2B635BD5FFFB2C45C8BD0866AEE3DEC04D
+      36DEF72F004A36F115455A48E31206909B6C684F4DC783A89E8819F4ECFF7F87
+      9D3AA5AB0F327325F292C99835F2BF036EB181BDCBE6FD2E83C72D36B037D8C0
+      5E60037FF87DAEEB8F7817539DFECF4CB090E3FB0F81944FE89F992F7D1970F9
+      1B20678F1697D9CCFFC2A6FF1433E10F9EC0910F9032D942A7DFB419BD1538C1
+      0CF7E31C06ABA50C760C62596CFA2FC769218D33D9FCA7D1EFE9B90CA49E4899
+      DA57C7FF79B289ACE98CC45D02FCCA06FD0A9BF8DFFE0D5CDDAB8534CE66F3FE
+      EB66EE8DFECFFE0309A3CC75FA4FF110A10F0F05F07C5F69B9B9DCF3B5FD40DE
+      B77C17DF6AC7D29C64BBB0018AA479886955FF1F1E214C8F4FF99B527D854133
+      67B776FD0D06EB4206DDC2648E0F69E7245B4E1C8E4C1E5013DBAAFEDFFB8110
+      BB1C85E79985EE6AF5B504E03A71F330DFFB51E03671334933D744A42D1D07DE
+      1FFFD6F747C3E71D8E61FD9FEC3BB0A2E4C446260D7EAFBB3FF03E11B7BE87E2
+      CC261C996A5FCD357E2FDEDF16BE669EF53FCF161EEFD6333B65E6E0B2945983
+      CBF77BF4CE95CE4B9BC5ABF4F3672362C204B1CEC7476CF6F3135B66CC305931
+      667470A8BB7B5AF8C489F2705F5F45E0902119B36C6C96CCB1B7EF3A978D4B0B
+      5EE46F9A3ECD757FE02279FEB1343454B0D86DCEFF8D552AE41EF9092BC77829
+      67DB0DF27A91BFC6DB5BAC1D3FDEE5BBE055AABA1355789AA782BA9C85A6AA49
+      0375A51A0D052AD49FAE41ECB440357D8C6FCD5F3976ACF126EFE98AFBFFCA43
+      CD8147A8973D4643910A8DF20634B20E69282637F3316A0F3EC2C3E0627CE93C
+      BA9267D1E97FD9D85121298ED1B86A9B8EAAC872D42656A1EEDC63D45FAA437D
+      561DEAD2C84DAA42557419F206B31FB48AC26CC7413AFDAF9BE8939ED9E53BFC
+      D6E638E4EEF9A80C2F45752CFDC4576A501D57814711A5508C2D40AEFE095C32
+      3A8A454347E8F41F37759EFCBAFE69DCD64B8352EF126ACDF351EB761755FE25
+      A89A51829A51F7506B7103657A59B8A3978E3CBDD35833C457A7DFBD33831577
+      DA64A05CEF329EB661F1D48105CF5B6C342CEF32F1126F119D6EA141FF062AF4
+      AEE09E9E0C114326EBF8BB3EFD54A634C982AA4D1E1B07363103D98C8C60FCFC
+      980DC9278C9D2339B665D3617A4BE3BFDC281B5F0C73D3E97FE3B449A1058319
+      370DF85C6B723DC809A0FB10C6DE45C41C361C63393780B6F6C528B03E810047
+      DBF5ADBE9F69B4E70C65632FEEF343166DFEE4AE64FED8FE8485141BAA30E682
+      599CFBBB1C4D3D4B10316C4A0DBF9F4EFFC143878A79CEEF7BEE181DAC6E1CCD
+      06E95F2C18373D66ACE41D4A25B670FC69259AC694237ECC7204D80FF26F7D7F
+      24FE7C6767C17BE51D3ECAB7223F907962139F7D48CD584D6CAE4361D025448C
+      9E561D6037C8EFC5FBDBC297E6B82FB3597636E19FBBB86547FACC2E8B9C38A7
+      7CB19B476E80BDCD7ADA2C5EA59FFF05FF019F825528
+    }
+  end
+  object tmrDoneMsg: TTimer
+    Enabled = False
+    Interval = 1500
+    OnTimer = tmrDoneMsgTimer
+    Left = 216
+    Top = 72
+  end
+end

@@ -1,0 +1,9 @@
+object DataProvider: TDataProvider
+  OnCreate = DataModuleCreate
+  OnDestroy = DataModuleDestroy
+  OldCreateOrder = False
+  Height = 446
+  HorizontalOffset = 688
+  VerticalOffset = 187
+  Width = 346
+end

@@ -1,0 +1,37 @@
+object pgPortfolio: TpgPortfolio
+  Left = 230
+  Height = 720
+  Hint = 'Análisis de cartera'
+  Top = 288
+  Width = 1512
+  Caption = '&Cartera'
+  ClientHeight = 720
+  ClientWidth = 1512
+  LCLVersion = '3.2.0.0'
+  object DBGrid1: TDBGrid
+    Left = 0
+    Height = 720
+    Top = 0
+    Width = 1512
+    Align = alClient
+    Color = clWindow
+    Columns = <>
+    TabOrder = 0
+  end
+  object PopupMenu1: TPopupMenu
+    Left = 64
+    Top = 128
+    object MenuItem1: TMenuItem
+      Caption = 'Refrescar'
+    end
+    object Separator1: TMenuItem
+      Caption = '-'
+    end
+    object MenuItem2: TMenuItem
+      Caption = 'Deshabilitar'
+    end
+    object MenuItem3: TMenuItem
+      Caption = '&Habilitar'
+    end
+  end
+end

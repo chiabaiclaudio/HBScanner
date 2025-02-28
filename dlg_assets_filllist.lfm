@@ -1,0 +1,122 @@
+object DLGAssetsFillList: TDLGAssetsFillList
+  Left = 274
+  Height = 186
+  Top = 511
+  Width = 630
+  BorderStyle = bsDialog
+  Caption = 'Completar listado'
+  ClientHeight = 186
+  ClientWidth = 630
+  FormStyle = fsStayOnTop
+  OnCreate = FormCreate
+  Position = poMainFormCenter
+  LCLVersion = '3.2.0.0'
+  object pnlButtons: TButtonPanel
+    Left = 6
+    Height = 45
+    Top = 135
+    Width = 618
+    OKButton.Name = 'OKButton'
+    OKButton.Caption = '&Iniciar ...'
+    HelpButton.Name = 'HelpButton'
+    HelpButton.DefaultCaption = True
+    CloseButton.Name = 'CloseButton'
+    CloseButton.DefaultCaption = True
+    CancelButton.Name = 'CancelButton'
+    CancelButton.Caption = '&Cancelar'
+    CancelButton.Enabled = False
+    TabOrder = 0
+    DefaultButton = pbClose
+    ShowButtons = [pbClose]
+  end
+  object Panel1: TPanel
+    Left = 0
+    Height = 129
+    Top = 0
+    Width = 520
+    Align = alClient
+    BevelOuter = bvNone
+    ClientHeight = 129
+    ClientWidth = 520
+    TabOrder = 1
+    object lblProgress: TLabel
+      Left = 7
+      Height = 26
+      Top = 7
+      Width = 506
+      Align = alClient
+      Alignment = taCenter
+      AutoSize = False
+      BorderSpacing.Around = 7
+      Caption = 'Progreso ...'
+      Font.Height = -21
+      Layout = tlCenter
+      ParentFont = False
+    end
+    object barProgress: TProgressBar
+      Left = 7
+      Height = 52
+      Top = 70
+      Width = 506
+      Align = alBottom
+      BorderSpacing.Around = 7
+      BorderWidth = 5
+      Constraints.MinHeight = 50
+      ParentShowHint = False
+      TabOrder = 0
+      BarShowText = True
+    end
+    object lblCount: TLabel
+      Left = 0
+      Height = 23
+      Top = 40
+      Width = 520
+      Align = alBottom
+      Alignment = taCenter
+      Caption = '...'
+    end
+  end
+  object btnStart: TSpeedButton
+    Left = 520
+    Height = 129
+    Top = 0
+    Width = 105
+    Align = alRight
+    BorderSpacing.Right = 5
+    Caption = '&Iniciar'
+    Images = imglstButton
+    ImageIndex = 0
+    ImageWidth = 32
+    Layout = blGlyphBottom
+    OnClick = btnStartClick
+  end
+  object imglstButton: TImageList
+    Left = 16
+    Top = 141
+    Bitmap = {
+      4C7A020000001000000010000000010100000000000078DAED54310A83401014
+      0B1F607EE0037C8385656CFC832FB0C975F780E4270AF636B6814B61A395D8DA
+      5907039B5B73071A30B94B0849C081815D65D67577EE0CE377E079DE8652BAA3
+      376C75F55C4318639024090CC3001C4CA78EF82EF0101CC781344D4140A9CE54
+      2FE9FB3E946589352E4551ECF11F75F448D334218A22E8BA6EEC65A9C6925ED2
+      B66DA8EB1A704EAFEAABAAD2D65B9605711C43DFF7DAFD8761084DD3A0EECCE7
+      77509D9FEBBA90E7B9DCDFF1916EEA1FDC559665D23F27FE2CD0F42F117D04C6
+      8A6FDE1F54C4B3FC897F08F718FA7B24FA152973F18EA89EDFB66D47CA5CD4A1
+      ABFE63FAB7F677777EA98867B9CA3DF24FB802BB949F3D
+    }
+    BitmapAdv = {
+      4C69010000004C7A020000002000000020000000540100000000000078DAED98
+      31AA84301086172BC10B587906C1C6D2421BE1ED0DBC8178010BCFE2493C8277
+      08EBA6B2782058C9BC97E5057C21BA6E36895BCC0F030AE237269371662E1714
+      EA330500D75F23F05FECFECB127F806D19F78383A22882388EA1AE6B18C7D19A
+      1F1CC02EB9799E074DD3C03CCFC6FD90F1B90541006DDB1ADD973D3EB72449A0
+      EF7BD1876F1D3E1CE133731C078AA2004AA9D6B538CA7F121BCA6BF12A7F2736
+      947C50E573CBF37C7D5E6FB6F9CCAAAA82D57BACF3CBB23C8D2FACFF608B1F86
+      21745D673DFE7CDF7FC4FDB22C56CF9FEBBA8F733F4D93987FA8E9FCC3F21E21
+      442BF7085FB2C7DAF2FE1E7F638FB57DB38C9FA6296459B6557F5083F5C77DA7
+      FEA216EAAFEB1FC72A178542A15038FF90CC3FC4FE8E989A513C997F1CD5ED0D
+      FE66FDB5AEBDD8B5EC19D5BE03F9C8473EF2918FFC93F9770DFFDFE10DBEACFF
+      157B617A668F8E42A1D4F503F1E67A8B
+    }
+  end
+end

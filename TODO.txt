@@ -1,0 +1,31 @@
+
+- Al actualziar "solo mostrados", quiatar la adición de los activo senc artera.
+
+
+
+- Al iniciar el día sin datos se provoca un HB de -1200 aprox.
+  Habría que mantener la fecha anterior y el valor anterior al detectar no movimiento.
+- Copia de seguridad del grabado anterior. Copia de seguridad por día.
+- Eliminar variaciones de la moneda (USD_MEP y USD_CCL)
+
+- Evitar que SYMBOL o DESCRIPTION desaparezcan si los dos no están presentes.
+
+- Ver que sucede con los ultimos volumenes. PArece un asunto de signos.
+
+- AGregar una campo que refleje algun problema al traer lso datos o si todo fue bien
+
+- Arreglar fecha de actualizacion No refleja la hora local y parece que los datos viene sin hora correcta.
+
+- Al completar la loista de activos, pare eno estar mostrando la cuenta parcail de agregados. Se ven siempre cero.
+
+
+CATEGORIAS
+==========
+- Al crear el editor de categorias implementar una forma de aceptar
+  las categorías ya creadas y luego borradas. O bien, eliminarlas de la tabla.
+
+
+LISTA NEGRA
+===========
+- Modificar colores.
+

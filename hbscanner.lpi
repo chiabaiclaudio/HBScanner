@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CONFIG>
+  <ProjectOptions>
+    <Version Value="12"/>
+    <General>
+      <SessionStorage Value="InProjectDir"/>
+      <Title Value="Heart Beat Scanner"/>
+      <Scaled Value="True"/>
+      <ResourceType Value="res"/>
+      <UseXPManifest Value="True"/>
+      <XPManifest>
+        <DpiAware Value="True"/>
+      </XPManifest>
+      <Icon Value="0"/>
+    </General>
+    <VersionInfo>
+      <UseVersionInfo Value="True"/>
+      <MinorVersionNr Value="1"/>
+      <Language Value="040A"/>
+      <Attributes pvaPreRelease="True" pvaPrivateBuild="True"/>
+      <StringTable CompanyName="CJC" FileDescription="Explorador basado en Heart Beat - Aplicación principal" InternalName="HBScanner" LegalCopyright="Claudio J. Chiabai (c) 2024" ProductName="Heart Beat Scanner"/>
+    </VersionInfo>
+    <MacroValues Count="1">
+      <Macro1 Name="LCLWidgetType" Value="qt5"/>
+    </MacroValues>
+    <BuildModes>
+      <Item Name="Default" Default="True"/>
+      <SharedMatrixOptions Count="1">
+        <Item1 ID="688018496867" Modes="Default" Type="IDEMacro" MacroName="LCLWidgetType" Value="qt5"/>
+      </SharedMatrixOptions>
+    </BuildModes>
+    <PublishOptions>
+      <Version Value="2"/>
+      <UseFileFilters Value="True"/>
+    </PublishOptions>
+    <RunParams>
+      <FormatVersion Value="2"/>
+    </RunParams>
+    <RequiredPackages>
+      <Item>
+        <PackageName Value="atflatcontrols_package"/>
+      </Item>
+      <Item>
+        <PackageName Value="pl_Cindy"/>
+      </Item>
+      <Item>
+        <PackageName Value="KControlsLaz"/>
+      </Item>
+      <Item>
+        <PackageName Value="rxnew"/>
+      </Item>
+      <Item>
+        <PackageName Value="TDI"/>
+      </Item>
+      <Item>
+        <PackageName Value="SQLDBLaz"/>
+      </Item>
+      <Item>
+        <PackageName Value="FCL"/>
+      </Item>
+      <Item>
+        <PackageName Value="LCL"/>
+      </Item>
+    </RequiredPackages>
+    <Units>
+      <Unit>
+        <Filename Value="hbscanner.lpr"/>
+        <IsPartOfProject Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="Main.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="wMain"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit>
+      <Unit>
+        <Filename Value="data_assets.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="DataAssets"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="DataModule"/>
+        <UnitName Value="Data_Assets"/>
+      </Unit>
+      <Unit>
+        <Filename Value="dlg_assetadd.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="DLGAssetAdd"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="DLG_AssetAdd"/>
+      </Unit>
+      <Unit>
+        <Filename Value="config.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="Config"/>
+      </Unit>
+      <Unit>
+        <Filename Value="TODO.txt"/>
+        <IsPartOfProject Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="page_assets.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="pgAssets"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="Page_Assets"/>
+      </Unit>
+      <Unit>
+        <Filename Value="thread_update.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="Thread_Update"/>
+      </Unit>
+      <Unit>
+        <Filename Value="tab_filter.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="tabFilter"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="Tab_Filter"/>
+      </Unit>
+      <Unit>
+        <Filename Value="tab_assetdata.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="tabAssetData"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="Tab_AssetData"/>
+      </Unit>
+      <Unit>
+        <Filename Value="thread_searchbase.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="Thread_SearchBase"/>
+      </Unit>
+      <Unit>
+        <Filename Value="page_portfolio.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="Form1"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="Page_Portfolio"/>
+      </Unit>
+      <Unit>
+        <Filename Value="BUGS.txt"/>
+        <IsPartOfProject Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="data_assets_const.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="Data_Assets_Const"/>
+      </Unit>
+      <Unit>
+        <Filename Value="data_assets_filter.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="Data_Assets_Filter"/>
+      </Unit>
+      <Unit>
+        <Filename Value="data_historic.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="DataHistoric"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="DataModule"/>
+        <UnitName Value="Data_Historic"/>
+      </Unit>
+      <Unit>
+        <Filename Value="includes/HeartBeat.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="includes/HTTPCodes.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="includes/Market.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="includes/Tools.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit>
+    </Units>
+  </ProjectOptions>
+  <CompilerOptions>
+    <Version Value="11"/>
+    <Target>
+      <Filename Value="hbscanner"/>
+    </Target>
+    <SearchPaths>
+      <IncludeFiles Value="$(ProjOutDir)"/>
+      <OtherUnitFiles Value="includes"/>
+      <UnitOutputDirectory Value="lib/$(TargetCPU)-$(TargetOS)"/>
+    </SearchPaths>
+    <CodeGeneration>
+      <TargetCPU Value="x86_64"/>
+      <TargetOS Value="linux"/>
+    </CodeGeneration>
+    <Linking>
+      <Debugging>
+        <DebugInfoType Value="dsDwarf3"/>
+      </Debugging>
+      <Options>
+        <Win32>
+          <GraphicApplication Value="True"/>
+        </Win32>
+      </Options>
+    </Linking>
+  </CompilerOptions>
+  <Debugging>
+    <Exceptions>
+      <Item>
+        <Name Value="EAbort"/>
+      </Item>
+      <Item>
+        <Name Value="ECodetoolError"/>
+      </Item>
+      <Item>
+        <Name Value="EFOpenError"/>
+      </Item>
+      <Item>
+        <Name Value="EHTTPClient"/>
+      </Item>
+      <Item>
+        <Name Value="EInOutError"/>
+      </Item>
+      <Item>
+        <Name Value="RunError(103)"/>
+      </Item>
+    </Exceptions>
+  </Debugging>
+</CONFIG>

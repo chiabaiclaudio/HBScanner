@@ -1,0 +1,9 @@
+object DataHistoric: TDataHistoric
+  OnCreate = DataModuleCreate
+  OnDestroy = DataModuleDestroy
+  OldCreateOrder = False
+  Height = 480
+  HorizontalOffset = 876
+  VerticalOffset = 179
+  Width = 582
+end

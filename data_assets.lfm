@@ -1,0 +1,257 @@
+object DataAssets: TDataAssets
+  OnCreate = DataModuleCreate
+  OnDestroy = DataModuleDestroy
+  OldCreateOrder = False
+  Height = 719
+  HorizontalOffset = 511
+  VerticalOffset = 251
+  Width = 1159
+  object tblData: TBufDataset
+    FileName = '/home/claudio/.config/hbscanner/test_assets.data'
+    IndexName = 'DEFAULT_ORDER'
+    MaxIndexesCount = 4
+    FieldDefs = <    
+      item
+        Name = 'UPDATE_TIME'
+        DataType = ftDateTime
+        Precision = -1
+      end    
+      item
+        Name = 'UPDATE_CODE'
+        DataType = ftInteger
+        Precision = -1
+      end    
+      item
+        Name = 'UPDATE_MSG'
+        DataType = ftString
+        Precision = -1
+      end    
+      item
+        Name = 'ASSET_ID'
+        DataType = ftString
+        Precision = -1
+        Size = 250
+      end    
+      item
+        Name = 'ASSET_MARKET'
+        DataType = ftString
+        Precision = -1
+        Size = 150
+      end    
+      item
+        Name = 'ASSET_TYPE'
+        DataType = ftInteger
+        Precision = -1
+      end    
+      item
+        Name = 'ASSET_SETTLEMENT'
+        DataType = ftInteger
+        Precision = -1
+      end    
+      item
+        Name = 'ASSET_SYMBOL'
+        DataType = ftString
+        Precision = -1
+        Size = 150
+      end    
+      item
+        Name = 'ASSET_CURRENCY'
+        DataType = ftInteger
+        Precision = -1
+      end    
+      item
+        Name = 'ASSET_DESCRIPTION'
+        DataType = ftString
+        Precision = -1
+        Size = 250
+      end    
+      item
+        Name = 'ASSET_NOTE'
+        DataType = ftWideMemo
+        Precision = -1
+      end    
+      item
+        Name = 'MARK_PORTFOLIO'
+        DataType = ftBoolean
+        Precision = -1
+      end    
+      item
+        Name = 'MARK_BLACKLIST'
+        DataType = ftBoolean
+        Precision = -1
+      end    
+      item
+        Name = 'MARK_FAVORITE'
+        DataType = ftBoolean
+        Precision = -1
+      end    
+      item
+        Name = 'MARK_CATEGORY'
+        DataType = ftInteger
+        Precision = -1
+      end    
+      item
+        Name = 'MARK_ZONE'
+        DataType = ftInteger
+        Precision = -1
+      end    
+      item
+        Name = 'PRICE_CLOSE_LAST'
+        DataType = ftFloat
+        Precision = -1
+      end    
+      item
+        Name = 'PRICE_CLOSE'
+        DataType = ftFloat
+        Precision = -1
+      end    
+      item
+        Name = 'PRICE_OPEN'
+        DataType = ftFloat
+        Precision = -1
+      end    
+      item
+        Name = 'PRICE_LOW'
+        DataType = ftFloat
+        Precision = -1
+      end    
+      item
+        Name = 'PRICE_HIGH'
+        DataType = ftFloat
+        Precision = -1
+      end    
+      item
+        Name = 'VOLUME_ACTUAL'
+        DataType = ftLargeint
+        Precision = -1
+      end    
+      item
+        Name = 'VOLUME_LAST'
+        DataType = ftLargeint
+        Precision = -1
+      end    
+      item
+        Name = 'VOLUME_CHANGE'
+        DataType = ftFloat
+        Precision = -1
+      end    
+      item
+        Name = 'VOLUME_ORDER'
+        DataType = ftLargeint
+        Precision = -1
+      end    
+      item
+        Name = 'VOLUME_ORDER_LAST'
+        DataType = ftLargeint
+        Precision = -1
+      end    
+      item
+        Name = 'VOLUME_ORDER_CHANGE'
+        DataType = ftFloat
+        Precision = -1
+      end    
+      item
+        Name = 'PRICE_CHANGE_CC'
+        DataType = ftFloat
+        Precision = -1
+      end    
+      item
+        Name = 'PRICE_CHANGE_OC'
+        DataType = ftFloat
+        Precision = -1
+      end    
+      item
+        Name = 'PRICE_CHANGE_3DAY'
+        DataType = ftFloat
+        Precision = -1
+      end    
+      item
+        Name = 'PRICE_CHANGE_WEEK'
+        DataType = ftFloat
+        Precision = -1
+      end    
+      item
+        Name = 'PRICE_CHANGE_HALF_MONTH'
+        DataType = ftFloat
+        Precision = -1
+      end    
+      item
+        Name = 'PRICE_CHANGE_MONTH'
+        DataType = ftFloat
+        Precision = -1
+      end    
+      item
+        Name = 'HB_BASE'
+        DataType = ftInteger
+        Precision = -1
+      end    
+      item
+        Name = 'HB_FORCE'
+        DataType = ftInteger
+        Precision = -1
+      end    
+      item
+        Name = 'HB_VOLUME'
+        DataType = ftInteger
+        Precision = -1
+      end    
+      item
+        Name = 'HB_SPREAD_VOL'
+        DataType = ftFloat
+        Precision = -1
+      end    
+      item
+        Name = 'HB_SENSIBILITY'
+        DataType = ftInteger
+        Precision = -1
+      end    
+      item
+        Name = 'DERIV_SMA'
+        DataType = ftFloat
+        Precision = -1
+      end    
+      item
+        Name = 'DERIV_EMA'
+        DataType = ftFloat
+        Precision = -1
+      end    
+      item
+        Name = 'DERIV_WMA'
+        DataType = ftFloat
+        Precision = -1
+      end    
+      item
+        Name = 'DERIV_SWMA'
+        DataType = ftFloat
+        Precision = -1
+      end    
+      item
+        Name = 'SPREAD_SMA_WMA'
+        DataType = ftFloat
+        Precision = -1
+      end    
+      item
+        Name = 'SCORE_MAIN'
+        DataType = ftInteger
+        Precision = -1
+      end    
+      item
+        Name = 'SCORE_BULL'
+        DataType = ftInteger
+        Precision = -1
+      end    
+      item
+        Name = 'SCORE_BEAR'
+        DataType = ftInteger
+        Precision = -1
+      end    
+      item
+        Name = 'SCORE_DESCRIPTION'
+        DataType = ftWideMemo
+        Precision = -1
+      end>
+    BeforePost = tblBeforePost
+    Left = 56
+    Top = 40
+  end
+end

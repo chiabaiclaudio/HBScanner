@@ -1,0 +1,8 @@
+object pgMarket: TpgMarket
+  Left = 724
+  Height = 446
+  Top = 483
+  Width = 1100
+  Caption = '&Mercado'
+  LCLVersion = '3.2.0.0'
+end

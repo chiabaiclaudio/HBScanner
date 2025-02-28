@@ -1,0 +1,1 @@
+- Cuando eno esta filtrado y se filtra por t"todo alcista", el filtro no cambia.

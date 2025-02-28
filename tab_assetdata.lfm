@@ -1,0 +1,101 @@
+object tabAssetData: TtabAssetData
+  Left = 1035
+  Height = 704
+  Top = 203
+  Width = 598
+  Caption = '&Datos del activo'
+  ClientHeight = 704
+  ClientWidth = 598
+  LCLVersion = '3.2.0.0'
+  object dbTYPE: TDBText
+    Left = 0
+    Height = 23
+    Top = 0
+    Width = 598
+    Align = alTop
+    Alignment = taRightJustify
+    DataField = 'TYPE'
+    DataSource = dsAssets
+    Font.Style = [fsItalic]
+    ParentFont = False
+  end
+  object dbSYMBOL: TDBText
+    Left = 0
+    Height = 45
+    Top = 23
+    Width = 598
+    Align = alTop
+    Alignment = taRightJustify
+    DataField = 'SYMBOL'
+    DataSource = dsAssets
+    Font.Height = -32
+    Font.Style = [fsBold]
+    ParentFont = False
+  end
+  object dbNote: TDBMemo
+    Left = 0
+    Height = 508
+    Top = 91
+    Width = 598
+    Align = alClient
+    DataField = 'NOTE'
+    DataSource = dsAssets
+    DoubleBuffered = True
+    OnEnter = dbNoteEnter
+    OnExit = dbNoteExit
+    ParentDoubleBuffered = False
+    ScrollBars = ssAutoBoth
+    TabOrder = 0
+  end
+  object dbDrescription: TDBText
+    Left = 0
+    Height = 23
+    Top = 68
+    Width = 598
+    Align = alTop
+    Alignment = taRightJustify
+    DataField = 'DESCRIPTION'
+    DataSource = PageAssets.dsGrid
+    WordWrap = True
+  end
+  object grpHB: TGroupBox
+    Left = 0
+    Height = 105
+    Top = 599
+    Width = 598
+    Align = alBottom
+    BorderSpacing.CellAlignHorizontal = ccaLeftTop
+    BorderSpacing.CellAlignVertical = ccaLeftTop
+    Caption = 'grpHB'
+    ClientHeight = 81
+    ClientWidth = 596
+    Font.Style = [fsBold]
+    ParentFont = False
+    TabOrder = 1
+    object RxDBSpinEdit1: TRxDBSpinEdit
+      Left = 488
+      Height = 81
+      Top = 0
+      Width = 108
+      DataField = 'HB_SENSIBILITY'
+      DataSource = dsAssets
+      Align = alRight
+      TabOrder = 0
+    end
+    object lblSensibility: TLabel
+      Left = 0
+      Height = 81
+      Top = 0
+      Width = 488
+      Align = alClient
+      Caption = 'Sensibilidad: '
+      Layout = tlCenter
+    end
+  end
+  object dsAssets: TDataSource
+    AutoEdit = False
+    DataSet = DataAssets.tblAssets
+    Left = 192
+    Top = 392
+  end
+end
